@@ -4,7 +4,7 @@ import google.generativeai as genai
 
 
 
-genai.configure(api_key="AIzaSyA9-uT6c7ObCzclRwiHKytunvjTaiQixeY")
+genai.configure(api_key="")
 
 
 
