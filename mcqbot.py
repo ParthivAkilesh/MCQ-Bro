@@ -21,7 +21,6 @@ with st.sidebar:
 
     st.header("I am your external-brain!!")
 
-    input=st.text_input("Input Prompt: ",key="input")
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
     image=""  
     
@@ -34,6 +33,19 @@ if uploaded_file is not None:
 
 
 if submit: 
-    response=get_gemini_response(image)
-    st.subheader("The Correct answer is...")
+
+    with st.spinner("Soving your question.."):
+        response=get_gemini_response(image)
+    st.subheader("The correct answer is...")
     st.success(response)
+
+
+with st.expander("ABOUT"):
+
+    st.write("""
+                MCQ-Bro is an Multimodal based AI that can halp answer any MCQ question.\n
+                Made by: Parthiv Akilesh
+             """)
+    st.markdown("[Linkedin profile](https://www.linkedin.com/in/parthiv-akilesh-a-s-2aab3a206/)")
+    
+    
